@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: micro.world
+---
+testFramework: junit
+sourceLanguage: java
