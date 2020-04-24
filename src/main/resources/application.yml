@@ -12,3 +12,14 @@ micronaut:
       rapidoc:
         paths: classpath:META-INF/swagger/views/rapidoc
         mapping: /rapidoc/**
+tracing:
+  zipkin:
+    enabled: true
+    http:
+      url: 192.10.24.186:9411
+      sampler:
+        probability: 1.0
+  jaeger:
+    enabled: true
+    sampler:
+      probability: 1
