@@ -5,9 +5,11 @@ import javax.inject.Singleton;
 @Singleton
 public class Person {
  private Integer id;
- private String name;
- private Double salary;
- 
+ private String poc;
+ private String fechainicio;
+ private String fechafinal;
+ private String descripcion;
+
  public Integer getId() {
  return id;
  }
@@ -16,19 +18,36 @@ public class Person {
  this.id = id;
  }
  
- public String getName() {
- return name;
+ public String getPoc() {
+ return poc;
  }
  
- public void setName(String name) {
- this.name = name;
+ public void setPoc(String poc) {
+ this.poc = poc;
  }
  
- public Double getSalary() {
- return salary;
+public String getDescripcion() {
+ return descripcion;
  }
  
- public void setSalary(Double salary) {
- this.salary = salary;
+ public void setDescripcion(String descripcion) {
+ this.descripcion = descripcion;
+ }
+
+ public String getFechainicio() {
+ return fechainicio;
+ }
+ 
+ public void setFechainicio(String fechainicio) {
+ this.fechainicio = fechainicio;
  } 
+
+ public String getFechafinal() {
+ return fechafinal;
+ }
+ 
+ public void setFechafinal(String fechafinal) {
+ this.fechafinal = fechafinal;
+ } 
+
 }
