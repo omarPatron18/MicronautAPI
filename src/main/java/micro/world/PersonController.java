@@ -18,7 +18,7 @@ import io.micronaut.validation.Validated;
 import io.reactivex.Single;
 
 
-@Controller("/pocs")
+@Controller("/")
 public class PersonController {
 
 @Inject
@@ -31,7 +31,7 @@ public class PersonController {
 
 
 
-@Post("/poc")
+@Post("/catalogo")
  public HttpStatus addPerson(@Body Person person) {
  personService.addPerson(person);
  return HttpStatus.CREATED;
@@ -39,26 +39,26 @@ public class PersonController {
  
  @SuppressWarnings("unchecked")
  @Produces(MediaType.APPLICATION_JSON)
- @Get("/poc")
+ @Get("/catalogo")
  public JSONObject getPersons() {
  JSONObject responseObj = new JSONObject();
  responseObj.put("data",personService.getAllPersons());
  return responseObj;
  }
 
- @Put("/poc")
+ @Put("/catalogo")
  public HttpStatus updatePerson(@Body Person person) {
  personService.updatePerson(person);
  return HttpStatus.CREATED;
  }
 
-  @Delete("/poc/{id}")
+  @Delete("/catalogo/{id}")
  public HttpStatus deletePerson(Integer id) {
  personService.deletePerson(id);
  return HttpStatus.CREATED;
  }
 
-  @Get("/poc/{id}")
+  @Get("/catalogo/{id}")
  public JSONObject getPerson(Integer id) {
  JSONObject responseObj = new JSONObject();
  responseObj.put("data",personService.getPerson(id));
