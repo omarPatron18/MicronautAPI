@@ -1,4 +1,11 @@
 micronaut:
+  metrics:
+    enabled: true
+    export:
+      prometheus:
+        enabled: true
+        step: PT1M
+        descriptions: true
   application:
     name: micro-world
   router:
@@ -17,3 +24,6 @@ tracing:
     enabled: true
     sampler:
       probability: 1
+endpoints:
+  prometheus:
+    sensitive: false

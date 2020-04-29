@@ -124,6 +124,10 @@
       <scope>compile</scope>
     </dependency>
 
+    <dependency>
+    <groupId>io.micronaut.configuration</groupId>
+    <artifactId>micronaut-micrometer-registry-prometheus</artifactId>
+</dependency>
 
 
     <dependency>
