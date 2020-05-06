@@ -139,26 +139,37 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-shade-plugin</artifactId>
-        <version>3.1.0</version>
-        <executions>
-          <execution>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-shade-plugin</artifactId>
+    <version>3.1.1</version>
+    <executions>
+        <execution>
             <phase>package</phase>
             <goals>
-              <goal>shade</goal>
+                <goal>shade</goal>
             </goals>
-            <configuration>
-              <transformers>
-                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                  <mainClass>${exec.mainClass}</mainClass>
-                </transformer>
-                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
-              </transformers>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
+        </execution>
+    </executions>
+    <configuration>
+        <minimizeJar>true</minimizeJar>
+        <artifactSet>
+            <includes>
+                <include>javax.xml.bind:jaxb-api</include>
+                <include>com.sun.xml.bind:jaxb-impl</include>
+            </includes>
+        </artifactSet>
+        <relocations>
+            <relocation>
+                <pattern>javax.xml.bind</pattern>
+                <shadedPattern>org.update4j.javax.xml.bind</shadedPattern>
+            </relocation>
+            <relocation>
+                <pattern>com.sun.xml.bind</pattern>
+                <shadedPattern>org.update4j.com.sun.xml.bind</shadedPattern>
+            </relocation>
+        </relocations>
+    </configuration>
+</plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
