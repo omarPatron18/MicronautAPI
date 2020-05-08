@@ -20,7 +20,7 @@ spec:
           value: http://192.10.24.4:31189
         image: 192.10.24.21:80/library/micronaut-api:latest
         imagePullPolicy: Always
-        name: catalogo
+        name: gateway-app
         ports:
         - containerPort: 8080
 ---
@@ -33,7 +33,7 @@ metadata:
 spec:
   type: NodePort
   selector:
-    app: catalogo
+    app: gateway-app
   ports:
     - port: 8585
       targetPort: 8080
