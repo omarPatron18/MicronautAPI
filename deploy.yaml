@@ -18,7 +18,7 @@ spec:
       - env:
         - name: ATTACKED_HOST
           value: http://192.10.24.4:31189
-        image: 192.10.24.21:80/library/micronaut-api:latest
+        image: 192.10.24.21:80/library/micronaut-api:script
         imagePullPolicy: Always
         name: gateway-app
         ports:
